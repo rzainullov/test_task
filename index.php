@@ -7,10 +7,28 @@
     <title>Test task</title>
 </head>
 <body>
-    <form>
+    <form id="search_form">
        <label for="search">Поиск комментария по его фрагменту:<br>
             <input type="text" id="searched" name="searched" placeholder="Введите фрагмент комментария...">
        </label> 
     </form>
+    <script>
+        const searchForm = document.getElementById("search_form");
+        const searchInput = document.getElementById("searched");
+        const warning = document.createElement("p");
+        warning.innerText = "Фрагмент комментария для поиска не должен быть менее 3-х символов";
+        warning.setAttribute("id","warning");
+        searchInput.addEventListener("keyup", (e) => {
+            if(e.target.value.length < 3) {
+                if(!document.getElementById("warning")){
+                    searchForm.appendChild(warning);
+                }
+            } else {
+                if(document.getElementById("warning")){
+                    searchForm.removeChild(warning);
+                }
+            }
+        })
+    </script>
 </body>
 </html>
