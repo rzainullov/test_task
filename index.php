@@ -7,6 +7,12 @@
     <title>Test task</title>
 </head>
 <body>
+    <?php
+        require_once "create_db.php";
+        if(create_db()) { 
+            echo "<script>console.log('База создана и данные загружены')</script>";
+        }
+    ?>
     <form id="search_form">
        <label for="search">Поиск комментария по его фрагменту:<br>
             <input type="text" id="searched" name="searched" placeholder="Введите фрагмент комментария...">
