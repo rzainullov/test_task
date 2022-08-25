@@ -6,6 +6,6 @@
         curl_setopt($ch, CURLOPT_HEADER, false);
         $json = curl_exec($ch);
         curl_close($ch);
-        return json_decode($json);
+        return array_map(fn($element) => get_object_vars($element),json_decode($json));
     }
 ?>
