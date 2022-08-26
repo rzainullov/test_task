@@ -34,6 +34,11 @@
                 if(document.getElementById("warning")){
                     searchForm.removeChild(warning);
                 }
+                if(e.code.startsWith("Key")) {
+                    fetch('./search_key.php',{method:"POST",body:e.target.value})
+                    .then(responce => responce.json())
+                    .then(data => console.log(data));
+                }
             }
         })
     </script>
