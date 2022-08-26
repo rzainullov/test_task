@@ -9,9 +9,10 @@
 <body>
     <?php
         require_once "create_db_and_insert_data.php";
-        if(create_db_and_insert_data()) { 
-            echo "<script>console.log('База создана и данные загружены')</script>";
-        }
+        require_once "get_data_count.php";
+        if(create_db_and_insert_data()) {
+            echo "<script>console.log(". get_data_count() . ")</script>";
+        } 
     ?>
     <form id="search_form">
        <label for="search">Поиск комментария по его фрагменту:<br>
