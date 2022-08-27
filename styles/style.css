@@ -1,0 +1,103 @@
+@import url('./font.css');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Jura', sans-serif;
+}
+
+th {
+    width: 50%;
+    border-bottom: 1px solid black;
+}
+
+#search__app {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden ;
+}
+
+#search__wrapper {
+    height: 100%;
+    width: 70%;
+    margin: 0 auto ;
+}
+
+#search__header {
+    height: 5%;
+    width: 100%;
+}
+#search__main {
+    height: 60%;
+    width: 100%;
+}
+#search__main__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    text-align: center;
+}
+#search__footer {
+    height: 20%;
+    width: 100%;
+}
+
+#result__table__body {
+    display: block;
+    max-height: 60vh;
+    overflow: auto;
+}
+#result__table__body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f9f9fd;
+  }
+  
+#result__table__body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #99cece;
+}
+  
+#result__table__body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: #f9f9fd;
+}
+#result__table__head,#result__table__body tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#search__form__input {
+    font-size: 25px;
+    font-family:'Jura';
+    border: 2px solid #000;
+    border-radius: 50px;
+    padding: 5px 5px 5px 50px;
+    height: 40px;
+    width:100%;
+    background: url("../assets/search.png") no-repeat 10px;
+    background-size: auto 100%;
+    background-color: #99cece;
+}
+
+#search__form__input::placeholder {
+    color: black;
+}
+
+#search__form__input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+#search__form__input:hover {
+    cursor: pointer;
+    background-color: #60b6b6;
+}
+  
+  
+
